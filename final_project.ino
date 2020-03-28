@@ -1,3 +1,6 @@
+#include <Servo.h>
+Servo myservo; //create a servo object to control a servo
+
 int haveZombies = 0;
 
 const int trigPin = 2;
@@ -26,7 +29,7 @@ void loop()
   duration = pulseIn(echoPin, HIGH);
   // Calculating the distance
   distance= duration*0.034/2; // Prints the distance on the Serial Monitor
-  if (distance < 100) {
+  if (distance < 40) {
     Serial.println("IDENTIFIED: ZOMBIE");
     haveZombies = 1;
   } else {
