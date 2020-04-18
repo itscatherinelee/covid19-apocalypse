@@ -2,6 +2,7 @@
 Servo myservo; //create a servo object to control a servo
 
 int haveZombies = 0;
+int needSecondDefense = 0;
 
 const int trigPin = 2;
 const int echoPin = 3;
@@ -20,7 +21,7 @@ void setup()
 
 void loop()
 {
-  // Clears the trigPin
+      // Clears the trigPin
   digitalWrite(trigPin, LOW);
   delayMicroseconds(2); // Sets the trigPin on HIGH state for 10 micro seconds
   digitalWrite(trigPin, HIGH);
@@ -35,11 +36,24 @@ void loop()
   } else {
     haveZombies = 0;
   }
+  
   if (haveZombies == 1) {
-    digitalWrite(ledPin, HIGH);
-  } else {
-    digitalWrite(ledPin, LOW);
+    firstDefense();
   }
+
+  if (needSecondDefense == 1) {
+    secondDefense();
+  }
+
+}
+
+void firstDefense() 
+{
+
+}
+
+void secondDefense() 
+{
 
 }
 
