@@ -45,8 +45,6 @@ void loop()
     haveZombies = 0;
   }
   
-  
-  
   if (haveZombies == 1) {
     firstDefense();
   }
@@ -59,16 +57,21 @@ void loop()
 
 void firstDefense() 
 {
+  Serial.println("first defense");
   digitalWrite(bubbleMotor, HIGH);
-  delay(1000);
+  delay(100 0);
   digitalWrite(bubbleMotor, LOW);
-  delay(1000);
+  delay(800);
 
 }
 
 void secondDefense() 
 {
+  Serial.println("second defense");
   digitalWrite(musicMotor, HIGH);
+  delay(1000);
+  digitalWrite(musicMotor, LOW);
+  delay(1000);
 }
 
 
